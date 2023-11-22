@@ -7,20 +7,33 @@ def is_happy(num):
 
     return num == 1
 
+def check_happiness():
+    number = int(input("Enter a number: "))
+    if is_happy(number):
+        print(number," is a happy number.")
+    else:
+        print(number," is not a happy number.")
 
-number = int(input("Enter a number: "))
-if is_happy(number):
-    print(f"{number} is a happy number.")
-else:
-    print(f"{number} is not a happy number.")
+def print_happy_numbers_in_range():
+    m = int(input("Enter upper limit: "))
+    n = int(input("Enter lower limit: "))
+    print("Happy numbers within the given range:")
+    for i in range(m, n + 1):
+        if is_happy(i):
+            print(i, end=" ")
 
-m = int(input("Enter upper limit: "))
-n = int(input("Enter lower limit: "))
-for i in range (m,n+1):
-    if is_happy(i):
-        print(i,end=" ")
-N = int(input("Enter N: "))
-for j in range (N+1):
-    if is_happy(j):
-        print(j,end=" ")
+def print_happy_numbers_up_to_N():
+    N = int(input("Enter N: "))
+    print("Happy numbers up to {}:".format(N))
+    for j in range(N + 1):
+        if is_happy(j):
+            print(j, end=" ")
+
+
+check_happiness()
+print_happy_numbers_in_range()
+print_happy_numbers_up_to_N()
+
+
+
 
